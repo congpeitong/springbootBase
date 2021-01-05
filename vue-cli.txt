@@ -1,0 +1,22 @@
+1.vue 项目结构
+    build:webpack的初始化设置
+    config: 里面有index.js的项目配置文件，配置域名和端口
+    dist: 执行npm run build后生成，后端调用文件
+    node_modules: 项目依赖模块，执行npm install 后生成
+    src:
+        assets:css,js等放在assets下面
+        components：所有的组件页面放在该目录，可以在下面建立子目录
+        router: index.js路由配置
+        App.vue: 根组件
+        main.js：项目入口
+    static：第三方插件，图片等静态资源存放的目录
+    index.html: 首页入口
+    package.json: 项目依赖配置
+    test：添加单元测试
+2.vue 模式：
+            hash模式（默认模式无需配置）  访问路径有#
+            history模式 访问路径去掉#：
+                    配置方式：
+                        mode: history
+3.反向代理： npm install --save axios
+4.前后端合并需要运行：npm run build 会生成dist目录，将其中文件copy到web项目static静态文件夹中
