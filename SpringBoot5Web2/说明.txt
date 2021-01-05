@@ -1,0 +1,16 @@
+1.Spring MVC的相关配置
+    正常情况下 Spring Boot提供的Spring MVC默认配置基本符合我们的需求了，如果出现特殊情况，
+    我们可以通过一个配置类（注解有@Configuration的类）加上@EnableWebMvc注解来实现完全自己控制的 MVC配置。
+    如果我们既需要保留Spring Boot 提供的便利还想要增加自己的额外配置的时候，
+    可以定义一个配置类并继承 WebMvcConfigurationAdapter 无需使用@EnableWebMvc。
+
+    重写的 addViewControllers 方法，不会覆盖WebMvcAutoConfiguration中的addViewController方法，需要注意的是
+    在此方法中 Spring Boot 将 “/”映射值index.html。
+    这就说明 我们自己的配置和spring Boot的自动配置同时有效。
+2.Tomcat配置
+    Spring Boot 默认内嵌的Tomcat为servlet容器。
+    1. 配置文件配置tomcat
+        Spring Boot 在org.springframework.boot.autoconfigure.web.ServerProperties 类中
+        定义了Tomcat的全部属性。我们可以在 application.properties文件中配置属性。
+        Tomcat特有配置都以 server.tomcat 作为前缀
+    2.
