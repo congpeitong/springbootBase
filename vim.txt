@@ -1,0 +1,45 @@
+ Test: Hello,My name is MaleHunter
+ Test: Hello,My name is MaleHunter
+ Test: Hello,My name is MaleHunter
+ Test: Hello,My name is MaleHunter
+ Test: Hello,My name is MaleHunter
+ Test: Hello,My name is MaleHunter
+ hello: world
+ Test: Hello,My name is MaleHunter
+ happy new year
+ Test: Hello,My name is MaleHunter
+ Test: Hello,My name is MaleHunter
+ hello: world
+ Test: Hello,My name is MaleHunter
+
+常用操作：
+    /hello:查找hello单词，查找多个n键
+    ctrl+e:最近文件
+    yy:复制当前行
+    3yy:复制3行
+    p:粘贴
+    dd:删除当前行
+    x:正向按字符单位进行删除
+    X:反向按字符单位进行删除
+    dw:删除一个词
+    ^:跳转到当前行的行首
+    $:跳转到当前行的行尾
+    d^:从当前字符删除到行首
+    d&:从当前字符删除到行末
+    dG:从当前行删除到最后一行
+    d1G:从当前行删除到行首
+    df:从光标处删除指定字符
+    di:删除引号内的内容
+    da:删除包含引号内的内容
+    gg:跳转至文件头
+    G:跳转至文件尾
+    行号G:跳转至指定行的开头
+    u:撤销
+    ctrl+y:恢复
+    w/W:词组的正向跳转
+    b/B:词组的反向跳转
+    f:正向跳转到指定字符
+    F：反向跳转到指定字符
+    t:正向跳转到指定字符的上一个位置
+    T:反向跳转到指定字符的下一个位置
+
