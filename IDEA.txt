@@ -1,0 +1,10 @@
+1.Alt+inset:创建内容/生成代码（get/set,construct)
+2.Ctrl+d:复制当前行到下一行
+3.Ctrl+y:删除当前行：
+4.Ctrl+Shif+up/down:代码的上下移动
+5.Ctrl+n:搜索类
+6.Ctrl+shif+space:代码自动补全提示
+7.ctrl+鼠标左击：进入源码
+8.Ctrl+Alt+left:进入源码的回退
+9.Ctrl+Alt+right:源码的进入/前进
+10:Ctrl+Alt+t:代码块包围(try catch/if/while/....)
