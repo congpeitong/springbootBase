@@ -1,0 +1,23 @@
+{
+  "groups": [
+    {
+      "name": "eat",
+      "type": "com.example2.BaseConfig.EatFood",
+      "sourceType": "com.example2.BaseConfig.EatFood"
+    }
+  ],
+  "properties": [
+    {
+      "name": "eat.eat-name",
+      "type": "java.lang.String",
+      "sourceType": "com.example2.BaseConfig.EatFood"
+    },
+    {
+      "name": "eat.eatprice",
+      "type": "java.lang.Integer",
+      "sourceType": "com.example2.BaseConfig.EatFood",
+      "defaultValue": 0
+    }
+  ],
+  "hints": []
+}

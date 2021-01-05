@@ -1,0 +1,56 @@
+1.springBoot端口配置
+    1.Spring boot使用一个全局的配置文件，application.properties或者application.yml放置在
+        src/main/resources目录或者类路径的/config下。
+    2.SpringBoot不仅支持常规的properties配置文件，还支持yaml语言的配置文件，yaml是以数据为中心的语言，
+        在配置数据的时候具有面向对象的特征。
+    3.application.properties是比较常见的配置文件，SpringBoot的全局配置文件的作用是对一些默认配置的配置值进行修改。
+2. 在配置文件 application.properties 中添加配置信息
+    server.port=8081     :端口配置
+    server.servlet.context-path=/springboot ：修改默认访问路径如：/hello将改为/springboot/hello
+    或者在配置文件application.yml中添加
+    server:
+        port: 8081
+        contextPath: /springboot
+3. 使用XML配置
+    SpringBoot提倡零配置，就是说不要xml配置，但是在项目开发中，我们会遇到一些特殊要求下必须通过配置xml方式来实现，
+    这样你不得不添加xml配置，我们可以通过Spring提供的@ImportResource来加载xml配置
+    实例如下：
+    @ImportResource({"classpath:some-context.xml","classpath:another-context.xml"})
+4. 命令行参数配置
+    SpringBoot可以是基于jar包和war包运行的，打成jar包的程序可以直接通过命令行运行：
+    java -jar xxx.jar
+    当然更方便的是可以通过命令行修改Tomcat的端口：
+    java -jar xxx.jar --server.port=8081
+    至此你的运行端口可以任由你来改动。
+5. 常规属性配置
+    在常规的Spring环境下，注入properties文件里的值的方式，通过@PropertySource指明properties文件的位置，
+    然后通过@Value注入值，但是在SpringBoot中就简单多了，只需要我们在application.properties文件中定义属性，
+    直接使用@Value注入就可以了。
+6. 访问乱码问题：
+     输出信息乱码，我们在页面显示的时候(sout)需要中文说明，这样就会出现乱码问题,解决办法如下：
+        请求接口注解中添加字符格式
+        @GetMapping(value = "/hello",produces = "text/plain;charset=UTF-8")
+     浏览器访问出现乱码，解决办法：
+        server.tomcat.uri-encoding=UTF-8
+        spring.http.encoding.charset=UTF-8
+        spring.http.encoding.enabled=true
+        spring.http.encoding.force=true
+        spring.messages.encoding=UTF-8
+7. 类型安全的配置（基于properties）
+    使用@Value注入每个配置在实际项目开发中肯定是非常麻烦的，毕竟我们的配置一般都是多个的，
+    若使用上面的方式就需要我们使用@Value注入很多次。
+    当然这种情况SpringBoot也考虑到了，同时提供了基于类型安全的配置方式，通过@ConfigurationProperties\
+    将preporties属性和一个Bean及其属性关联，来实现类型安全的配置。
+8. 日志配置
+    SpringBoot 支持JavaUtil Logging，Log4j，Log4j2，和Logback作为日志框架，无论使用哪种日志框架，
+    SpringBoot都为使用日志框架的控制台输出及其文件输出做好了配置。
+    默认情况下，SpringBoot使用LogBack作为日志框架。
+    1. 配置日志文件
+        logging.file=d:/log/log.log
+    2. 配置日志级别（格式：logging.level.包名=级别）
+        logging.level.org.springframework.web=debug
+9.Profile配置（运行环境）
+  Profile是 SpringBoot 用来针对不同的环境对应不同的配置提供支持的，
+  全局Profile配置使用application-{profile}.properties，例如：application-dev.properties
+  通过在application.properties中设置 spring.profiles.active=dev来指定使用哪个配置。
+10.
